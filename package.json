@@ -2,6 +2,18 @@
   "name": "gooddata-homework",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+     "/gdc": {
+        "changeOrigin": true,
+        "cookieDomainRewrite": "localhost",
+        "target": "https://secure.gooddata.com/"
+     },
+     "/*.html": {
+        "changeOrigin": true,
+        "secure": false,
+        "target": "https://secure.gooddata.com/"
+     }
+  },
   "dependencies": {
     "@gooddata/react-components": "^2.9.2",
     "react": "15",

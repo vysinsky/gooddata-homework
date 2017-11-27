@@ -6,7 +6,7 @@ To successfully complete this tutorial, you are required to:
 
 * Be familiar with the modern JavaScript ecosystem.
 * Have `node.js` and `yarn` installed in your development environment.
-  * If you do not have these tools installed, you can get them from https://nodejs.org/ and https://yarnpkg.com/ respectively. Install `node.js` first.
+  * If you do not have these tools installed, you can get them from https://nodejs.org/ and https://yarnpkg.com/ respectively.
 * Have an account on the GoodData platform.
   * If you do not have a GoodData account yet, [create a trial one](https://secure.gooddata.com/account.html?lastUrl=%252F#/registration/projectTemplate/urn%253Agooddata%253AOnboardingProductTour).
 

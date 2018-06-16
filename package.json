@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@gooddata/react-components": "^2.9.2",
+    "prop-types": "15",
     "react": "15",
     "react-dom": "15",
     "react-scripts": "1.0.17"

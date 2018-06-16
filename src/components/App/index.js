@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '@gooddata/react-components/styles/css/main.css';
 import { AfmComponents } from '@gooddata/react-components';
-import catalogJson from './catalog.json';
+import catalogJson from '../../data/catalog.json';
 
 const { ColumnChart } = AfmComponents;
 

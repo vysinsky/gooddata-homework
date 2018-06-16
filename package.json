@@ -1,5 +1,6 @@
 {
   "name": "gooddata-homework",
+  "homepage": "https://gooddata-homework.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "proxy": {

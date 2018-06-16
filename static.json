@@ -1,0 +1,12 @@
+{
+  "root": "build/",
+  "https_only": true,
+  "proxies": {
+    "/gdc": {
+      "origin": "${API_URL}"
+    },
+    "/*.html": {
+      "origin": "${API_URL}"
+    }
+  }
+}

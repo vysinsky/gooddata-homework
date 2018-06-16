@@ -2,11 +2,50 @@ import React, { Component } from 'react';
 import '@gooddata/react-components/styles/css/main.css';
 import { AfmComponents } from '@gooddata/react-components';
 import catalogJson from '../../data/catalog.json';
+import Dropdown from '../Dropdown';
 
 const { ColumnChart } = AfmComponents;
 
+const OPTIONS = [
+    {
+        value: '2018'
+    },
+    {
+        value: '2017'
+    },
+    {
+        value: '2016'
+    },
+    {
+        value: '2015'
+    }
+];
 
 class App extends Component {
+
+    constructor(props) {
+      super(props);
+
+      this.currentYear = (new Date()).getFullYear();
+
+      this.state = {
+          filterYear: this.currentYear.toString(),
+          yearDiff: 0
+      };
+
+      this.handleFilterChange = this.handleFilterChange.bind(this);
+    }
+
+    handleFilterChange(e) {
+        const selectedYear = e.target.value;
+
+        this.setState({
+          filterYear: selectedYear,
+          yearDiff:  selectedYear - this.currentYear
+        });
+    }
+
+
     getAfmMeasures() {
         return {
             measures: [{
@@ -21,10 +60,12 @@ class App extends Component {
     }
 
     getAfm() {
+        const { state } = this;
+
         return {
             ...this.getAfmMeasures(),
             filters: [{
-                between: [-1, -1],
+                between: [state.yearDiff, state.yearDiff],
                 granularity: 'year',
                 id: catalogJson.dateDataSets['Date (Activity)'].identifier,
                 intervalType: 'relative',
@@ -44,14 +85,15 @@ class App extends Component {
     }
 
     renderDropdown() {
+        const { state } = this;
+
         return (
-            <select defaultValue="2016">
-                <option value="2018">2018</option>
-                <option value="2017">2017</option>
-                <option value="2016">2016</option>
-                <option value="2015">2015</option>
-            </select>
-        )
+          <Dropdown
+            defaultValue={state.filterYear}
+            onChange={this.handleFilterChange}
+            options={OPTIONS}
+          />
+        );
     }
 
     render() {
